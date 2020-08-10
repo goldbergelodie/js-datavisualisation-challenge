@@ -18,4 +18,6 @@ This consolidation challenge will help you assess your ability to solve a proble
 
 
 ## Process
+The charts were created using [TOAST UI cdn](https://ui.toast.com/)
+Javascript was used to extract data from tables and then implemented into graphics
 
