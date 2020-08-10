@@ -15,3 +15,7 @@ This consolidation challenge will help you assess your ability to solve a proble
 - **problem-solving** : design a logical solution to implement the expected result
 - Debugging using the console
 - Understand the notion of **"separation of concerns"**
+
+
+## Process
+
