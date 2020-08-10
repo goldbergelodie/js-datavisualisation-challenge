@@ -2,11 +2,9 @@ const table = document.getElementById('table1');
 
 
 //assign variables
-
-
-let json = [];
 let years = [];
-let countries = [];
+let country = [];
+let json = [];
 
 
 /*year variable*/
@@ -17,7 +15,7 @@ for (let a = 0; a < table.rows[1].cells.length - 2; a++) {
 /*country variable*/
 
 for (let b = 0; b < table.rows.length - 2; b++) {
-    countries[b] = table.rows[b + 2].cells[1].innerHTML.replace(/\W/gi, '');
+    country[b] = table.rows[b + 2].cells[1].innerHTML.replace(/\W/gi, '');
 }
 
 /*tables*/
@@ -42,9 +40,9 @@ let data = {
 
 // json data
 
-for (let e = 0; e < countries.length; e++) {
+for (let e = 0; e < country.length; e++) {
     let countryData = {};
-    countryData.name = countries[e];
+    countryData.name = country[e];
     countryData.data = json[e];
     data.series.push(countryData);
 }
@@ -53,7 +51,6 @@ const options = {
     chart: {
         width: 850,
         height: 550,
-        title: 'Crimes in Europe'
     },
     yAxis: {
         title: 'Number of Crimes in thousands',
@@ -86,7 +83,7 @@ const theme = {
 const chart = tui.chart.lineChart(container, data, options);
 
 
-// ===============HOMICIDE TABLE=========================
+// SECOND CHART
 
 const homicideTable = document.getElementById('table2');
 
@@ -112,8 +109,8 @@ for (let d = 0; d < homicideTable.rows[1].cells.length - 2; d++) {
 }
 // Homicide chart API from TOAST UI chart.
 
-var homicideContainer = document.getElementById('Homicides');
-var homicideData = {
+let homicideContainer = document.getElementById('Homicides');
+let homicideData = {
     categories: homicideCountries,
     series: [
         {
@@ -126,11 +123,10 @@ var homicideData = {
         }
     ]
 };
-var homicideOptions = {
+let homicideOptions = {
     chart: {
         width: 900,
         height: 1000,
-        title: 'Homicides in Euroupe',
         format: '1,000'
     },
     yAxis: {
@@ -146,7 +142,7 @@ var homicideOptions = {
         showLabel: true
     }
 };
-var theme1 = {
+let theme1 = {
     series: {
         colors: [
             '#83b14e', '#458a3f', '#295ba0', '#2a4175', '#289399',
